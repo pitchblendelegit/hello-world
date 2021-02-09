@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main (){
+    char first_name[100], last_name[100], grade;
+    int id_number, n, sum=0;
+    scanf("%s", &first_name);
+    scanf("%s", &last_name);
+    scanf("%d", &id_number);
+    scanf("%d", &n);
+    if(n > 1){
+        int* score = (int*)malloc(n * sizeof(int));
+        for(int i=0; i < n; i++){
+            scanf("%d", &score[i]);
+            sum = sum + score[i];
+            if(sum <= 100 && sum >= 90)
+                grade = 'O';
+            else if(sum < 90 && sum >= 80)
+                grade = 'E';
+            else if(sum < 80 && sum >= 70)
+                grade = 'A';
+            else if(sum < 70 && sum >= 55)
+                grade = 'P';
+            else if(sum < 55 && sum >= 40)
+                grade = 'D';
+            else if(sum < 40)
+                grade = 'T';
+        }
+    }
+    else{
+        int score;
+        scanf("%d", &score);
+        sum = sum + score;
+            if(sum <= 100 && sum >= 90)
+                grade = 'O';
+            else if(sum < 90 && sum >= 80)
+                grade = 'E';
+            else if(sum < 80 && sum >= 70)
+                grade = 'A';
+            else if(sum < 70 && sum >= 55)
+                grade = 'P';
+            else if(sum < 55 && sum >= 40)
+                grade = 'D';
+            else if(sum < 40)
+                grade = 'T';
+    }
+    printf("Name : %s, %s\n", last_name, first_name);
+    printf("ID : %d\n", id_number);
+    printf("Grade : %c", grade);
+    return 0;
+}
